@@ -1,0 +1,8 @@
+sequenceDiagram
+    participant Browser
+    participant Server
+    Note right of Browser: User sumbits the input data
+    Browser->>Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate Server
+    Server->>Browser: {"message":"note created"}
+    deactivate Server

@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Browser
+    participant Server
+    Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate Server
+    Server->>Browser: HTML document
+    deactivate Server
+    Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate Server
+    Server->>Browser: spa.js
+    deactivate Server
+    Note right of Browser: browser executes spa.js
+    Browser->>Server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate Server
+    Server->>Browser: [{"content":"gdhsj","date":"2023-02-22T04:13:58.618Z"},...]
+    deactivate Server
