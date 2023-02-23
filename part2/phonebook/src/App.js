@@ -91,7 +91,7 @@ const App = () => {
         setNewName('')
         setNewNumber('')
       }).catch(error=>{
-        setMessage(`Something wrong happened!`)
+        setMessage(error.response.data.error)
         setMessageType('error');
         setTimeout(() => {
           setMessage(null)
